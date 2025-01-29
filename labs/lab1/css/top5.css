@@ -1,0 +1,26 @@
+body {
+    background-color: cadetblue;
+}
+
+p {
+    color: white;
+}
+
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+li,ol{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+h2{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.artist{
+    width: 300px;
+
+}
