@@ -1,0 +1,95 @@
+/* id  */
+#logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 100px;  /* Adjust size as needed */
+    height: auto;
+}
+
+/*Classes*/
+.nav-elements{
+    font-size:large;
+    justify-content: flex-end;
+
+}
+
+.about-section{
+    text-align: center;
+    padding-top: 100px;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.information{
+    background-color: black;
+    color: white;
+    text-align:center;
+    padding: 20px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 700px;
+
+}
+/*elements*/
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    flex: 1;
+}
+
+
+a,a:hover,a:focus,a:visited{ 
+    text-decoration: none; color:#000;
+    
+}
+
+p {
+    font-family:'Times New Roman', Times, serif;
+}
+
+
+
+
+/* Mobile Screens (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    #logo {
+        width: 80px; 
+        top: 5px;
+        right: 5px;
+    }
+
+    .nav-elements {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-section {
+        padding: 30px 10px; 
+    }
+
+    .information {
+        font-size: 14px; 
+        padding: 15px;
+    }
+}
+
+/* Tablet Screens (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    #logo {
+        width: 90px; 
+    }
+
+    .nav-elements {
+        font-size: medium;
+    }
+
+    .about-section {
+        padding: 40px 15px;
+    }
+}
