@@ -1,3 +1,6 @@
+ 
+
+
 var title = document.getElementById("title");
 title.style.color = "blue"; // Change the text color to blue
 

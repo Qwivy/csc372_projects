@@ -7,19 +7,126 @@
     height: auto;
 }
 
+#title{
+    padding: 5px;
+}
+
+#cart-icon-container {
+    position: fixed; /* Fixed position at the top-right */
+    top: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it's always on top */
+}
+
+#cart-count {
+    position: absolute;
+    top: 15px;
+    left: 8px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 14px;
+}
 /*Classes*/
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between items */
+    padding: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual product items */
+.product-item {
+    text-align: center;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: slightly rounded edges */
+}
+
+.product-item h3 {
+    margin-top: 15px;
+    font-size: 1.2em;
+    color: #333;
+    font-weight: 500;
+}
+
+.product-item p {
+    color: #777;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.product-card .price {
+    font-size: .95em;
+    color: #333;
+}
+
+.product-card button {
+    color: grey;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 4.9em;
+}
+
+.product-card button:hover {
+        color: #000;
+}
+
+
+
+
+.nav-item {
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.nav-item a {
+    position: relative;
+    z-index: 2;
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-item::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: black;
+    transition: height 0.4s ease-in-out;
+    z-index: 1;
+}
+
+.nav-item:hover::before {
+    height: 100%;
+}
+
+.nav-item:hover a {
+    color: white;
+}
+
+
+
+
 .nav-elements{
     font-size:large;
     justify-content: flex-end;
 
 }
 
-.about-section{
-    text-align: center;
-    padding-top: 100px;
-    justify-content: center; 
-    align-items: center; 
-}
 
 .information{
     background-color: black;
@@ -31,6 +138,7 @@
     margin-top: 700px;
 
 }
+
 /*elements*/
 
 
