@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Cart icon from FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Re:Loved</title>
 </head>
 <body>
-    <a href="index.html"><h1 id="title">Re:Loved</h1></a>
+    <div id="header">
+        <a href="index.html"><h1 id="title">Re:Loved</h1></a>
 
-    <div id="cart-icon-container">
-        <i class="fas fa-shopping-cart" style="font-size: 24px;"></i>
-        <span id="cart-count">0</span>
-    </div>
+        <div id="cart-icon-container">
+            <i class="fas fa-shopping-cart" style="font-size: 24px;"></i>
+            <span id="cart-count">0</span>
+        </div>
 
-    <div class="nav-elements">
-        <nav>
-            <span class="nav-item"><a href="about.html">About</a></span>
-            <span class="nav-item"><a href="faq.html">FAQ</a></span>
-        </nav>
+        <div class="nav-elements">
+            <nav>
+                <span class="nav-item"><a href="about.html">About</a></span>
+                <span class="nav-item"><a href="faq.html">FAQ</a></span>
+            </nav>
+        </div>
     </div>
 
     <div class="product-grid">
@@ -62,13 +64,31 @@
         <p style="text-align: left;">Established 2025</p>
     </div>
 
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script type="text/javascript">
         let cartCount = 0;
 
         function addToCart() {
             cartCount += 1; // Increase cart count by 1
-            document.getElementById("cart-count").innerText = cartCount; // Update the cart count display
+            $("#cart-count").text(cartCount); // Update the cart count display
         }
+
+        $(document).ready(function () {
+    // Initially hide the entire header
+    $("#header").css("opacity", "0");
+
+    // When hovered, fade in the header
+    $("#header").hover(
+        function () {
+            $(this).stop().fadeTo(300, 1); // Fade in
+        },
+        function () {
+            $(this).stop().fadeTo(300, 0); // Fade out
+        }
+    );
+});
     </script>
+
 </body>
 </html>

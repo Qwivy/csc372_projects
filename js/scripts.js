@@ -1,21 +1,14 @@
- 
+
+var $title = $("#title");
+var $productsLink = $("#products-link");
+var $faqLink = $("#faq-link");
 
 
-var title = document.getElementById("title");
-title.style.color = "blue"; // Change the text color to blue
-
-const productsLink = document.getElementById("products-link");
-const faqLink = document.getElementById("faq-link");
+$title.css("color", "blue");
 
 
-
-productsLink.addEventListener("click", function (e) {
-    console.log("Products link clicked!");
+$faqLink.on("click", function (e) {
     e.preventDefault(); // ignore navigation
-    alert("This page is under construction!"); 
+    alert("This page is under construction!");
 });
 
-faqLink.addEventListener("click", function (e) {
-    e.preventDefault(); // ignore navigation
-    alert("This page is under construction!"); 
-});
