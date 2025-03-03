@@ -33,10 +33,18 @@
                 Every year, millions of tons of clothing end up in landfills, contributing to pollution and waste. We’re here to change that. By curating pre-loved, stylish, and sustainable fashion pieces, we’re extending the life cycle of garments and reducing the demand for mass production.
                 
                 <h3>Why Shop with Re:Loved?</h3>
-                Sustainable Shopping - Every purchase helps reduce textile waste and carbon footprints.<br>
-                Quality Over Quantity - We handpick every item to ensure great condition and timeless style.<br>
-                Circular Fashion Movement - By choosing second-hand, you're supporting an economy that values reusability over disposability.<br>
+                <b>Sustainable Shopping</b> - Every purchase helps reduce textile waste and carbon footprints.<br>
+                <b>Quality Over Quantity</b> - We handpick every item to ensure great condition and timeless style.<br>
+                <b>Circular Fashion Movement</b> - By choosing second-hand, you're supporting an economy that values reusability over disposability.<br>
                 
+                <div id="sustainability-section">
+                    <h2>Our Sustainability Initiatives</h2>
+                    <button id="load-initiatives">Learn More</button>
+                    <div id="initiatives-container"></div>
+                </div>
+
+
+
                 <h3>Join the Movement</h3>
                 Fashion doesn't have to be wasteful. With Re:Loved, you're not just buying clothes you're making a statement for a greener, more ethical future. Together, we can eliminate fast fashion, one outfit at a time.
                 
@@ -61,7 +69,7 @@
         }
     
         $(document).ready(function () {
-            // delay before fading out, then fade out slowly over 5 seconds
+            // delay before fading out, then fade out slowly over 1 seconds
             setTimeout(function () {
                 $("#cart-icon-container").fadeOut(1000, function () {
                     $(this).remove();

@@ -30,7 +30,7 @@
             <img style="width: 50%;" src="images/placeholder.png" alt="Shirt">
             <h3>Classic Shirt</h3>
             <div class="price">$20.99</div>
-            <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+            <button class="add-to-cart">Add to Cart</button>
         </div>
 
 
@@ -38,14 +38,14 @@
             <img style="width: 50%;" src="images/placeholder.png" alt="Jeans">
             <h3>Denim Jeans</h3>
             <div class="price">$20.99</div>
-            <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+            <button class="add-to-cart">Add to Cart</button>
         </div>
 
         <div class="product-card">
             <img style="width: 50%;" src="images/placeholder.png" alt="Jacket">
             <h3>Leather Jacket</h3>
             <div class="price">$20.99</div>
-            <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+            <button class="add-to-cart">Add to Cart</button>
         </div>
 
         <!-- Product 4 -->
@@ -53,7 +53,7 @@
             <img style="width: 50%;" src="images/placeholder.png" alt="Hat">
             <h3>Baseball Hat</h3>
             <div class="price">$20.99</div>
-            <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+            <button class="add-to-cart">Add to Cart</button>
         </div>
     </div>
 
@@ -66,29 +66,7 @@
 
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script type="text/javascript">
-        let cartCount = 0;
-
-        function addToCart() {
-            cartCount += 1; // Increase cart count by 1
-            $("#cart-count").text(cartCount); // Update the cart count display
-        }
-
-        $(document).ready(function () {
-    // Initially hide the entire header
-    $("#header").css("opacity", "0");
-
-    // When hovered, fade in the header
-    $("#header").hover(
-        function () {
-            $(this).stop().fadeTo(300, 1); // Fade in
-        },
-        function () {
-            $(this).stop().fadeTo(300, 0); // Fade out
-        }
-    );
-});
-    </script>
+    <script type="text/javascript" src="js/scripts.js"></script>
 
 </body>
 </html>
