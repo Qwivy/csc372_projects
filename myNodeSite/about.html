@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>About</title>
+</head>
+<body>
+
+    <div id="cart-icon-container">
+        <i class="fas fa-shopping-cart" style="font-size: 24px;"></i>
+        <span id="cart-count">0</span>
+    </div>
+    <div id="header">
+        <a href="index.html"><h1 id="title">Re:Loved</h1></a>
+        <div class="nav-elements">
+            <nav>
+                <span class="nav-item"><a href="about.html">About</a></span>
+                <span class="nav-item"><a href="faq.html">FAQ</a></span>
+                <span class="nav-item"><a href="reviews.html">Reviews</a></span>
+            </nav>
+        </div>
+    </div>
+
+    <div class="about-section">
+        <h1 id="about" style="text-align: center;">about us</h1>
+            <p class = "about-text">
+                <h3>Re:Loved - Giving Fashion a Second Chance</h3>
+                
+                At Re:Loved, we believe that fashion shouldn-t come at the cost of our planet. Our mission is simple: to combat the harmful effects of fast fashion by giving high-quality, second-hand clothing a new home.
+                
+                Every year, millions of tons of clothing end up in landfills, contributing to pollution and waste. We’re here to change that. By curating pre-loved, stylish, and sustainable fashion pieces, we’re extending the life cycle of garments and reducing the demand for mass production.
+                
+                <h3>Why Shop with Re:Loved?</h3>
+                <b>Sustainable Shopping</b> - Every purchase helps reduce textile waste and carbon footprints.<br>
+                <b>Quality Over Quantity</b> - We handpick every item to ensure great condition and timeless style.<br>
+                <b>Circular Fashion Movement</b> - By choosing second-hand, you're supporting an economy that values reusability over disposability.<br>
+                
+                <div id="sustainability-section">
+                    <h2>Our Sustainability Initiatives</h2>
+                    <button id="load-initiatives">Learn More</button>
+                    <div id="initiatives-container"></div>
+                </div>
+
+
+
+                <h3>Join the Movement</h3>
+                Fashion doesn't have to be wasteful. With Re:Loved, you're not just buying clothes you're making a statement for a greener, more ethical future. Together, we can eliminate fast fashion, one outfit at a time.
+                
+                Wear. Reuse. Re:Loved.
+            </p>
+    </div>
+
+    <div class="information">
+        <p style="text-align: left;">Steven Ciresi</p>
+        <p style="text-align: left;">steven.ciresi@uri.edu</p>
+        <p style="text-align: left;">XX Street, XX</p>
+        <p style="text-align: left;">Established 2025</p>
+    </div>
+    <!-- Include jQuery from CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript">
+        let cartCount = 0;
+    
+        function addToCart() {
+            cartCount += 1; // Increase cart count by 1
+            $("#cart-count").text(cartCount); // Update the cart count display
+        }
+    
+        $(document).ready(function () {
+            // delay before fading out, then fade out slowly over 1 seconds
+            setTimeout(function () {
+                $("#cart-icon-container").fadeOut(1000, function () {
+                    $(this).remove();
+                });
+            }, 1000);
+        });
+
+        $(document).ready(function () {
+    // Initially hide the entire header
+    $("#header").css("opacity", "0");
+
+    // When hovered, fade in the header
+    $("#header").hover(
+        function () {
+            $(this).stop().fadeTo(300, 1); // Fade in
+        },
+        function () {
+            $(this).stop().fadeTo(300, 0); // Fade out
+        }
+    );
+});
+    </script>
+
+    <script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>
