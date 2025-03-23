@@ -20,13 +20,20 @@
             <nav>
                 <span class="nav-item"><a href="about.html">About</a></span>
                 <span class="nav-item"><a href="faq.html">FAQ</a></span>
+                <span class="nav-item"><a href="reviews.html">Reviews</a></span>
             </nav>
         </div>
     </div>
 
+    <div id="review-box" style="display: none;">
+        <h3>Leave a Review</h3>
+        <textarea id="review-text" placeholder="Write your review..."></textarea>
+        <button id="submit-review">Submit Review</button>
+    </div>
     <div class="product-grid">
+        
 
-        <div class="product-card">
+        <div class="product-card" data-product-name="Classic Shirt">
             <img style="width: 50%;" src="images/placeholder.png" alt="Shirt">
             <h3>Classic Shirt</h3>
             <div class="price">$20.99</div>
@@ -34,14 +41,14 @@
         </div>
 
 
-        <div class="product-card">
+        <div class="product-card" data-product-name="Denim Jeans">
             <img style="width: 50%;" src="images/placeholder.png" alt="Jeans">
             <h3>Denim Jeans</h3>
             <div class="price">$20.99</div>
             <button class="add-to-cart">Add to Cart</button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-product-name="Leather Jacket">
             <img style="width: 50%;" src="images/placeholder.png" alt="Jacket">
             <h3>Leather Jacket</h3>
             <div class="price">$20.99</div>
@@ -49,7 +56,7 @@
         </div>
 
         <!-- Product 4 -->
-        <div class="product-card">
+        <div class="product-card" data-product-name="BaseBall Hat">
             <img style="width: 50%;" src="images/placeholder.png" alt="Hat">
             <h3>Baseball Hat</h3>
             <div class="price">$20.99</div>
@@ -66,7 +73,6 @@
 
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script type="text/javascript" src="js/scripts.js"></script>
-
+    <script type="module" src="js/scripts.js"></script>
 </body>
 </html>

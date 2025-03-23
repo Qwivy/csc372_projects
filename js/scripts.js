@@ -118,3 +118,92 @@ $(document).ready(function () {
         });
     });
 });
+
+
+// Firebase setup
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCR7uCYI8RWrpMwUjxLzpOa89Z8fd7Y61w",
+  authDomain: "reloved-368a1.firebaseapp.com",
+  projectId: "reloved-368a1",
+  storageBucket: "reloved-368a1.firebasestorage.app",
+  messagingSenderId: "826347886822",
+  appId: "1:826347886822:web:98f961d68fb61a8c300327",
+  measurementId: "G-EZ3L05VP85"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// Cart and review tracking
+let cartCount = 0;
+let currentProduct = "";
+
+// Show review box when "Add to Cart" is clicked
+$(document).on("click", ".add-to-cart", function () {
+    currentProduct = $(this).closest(".product-card").data("product-name"); // Capture the product name
+    if (!currentProduct) {
+        console.error("No product name found!");
+        return;
+    }
+
+    // Increase cart count
+    cartCount += 1;  
+    $("#cart-count").text(cartCount);  // Update cart count display
+    
+    // Show the review box when an item is added to the cart
+    $("#review-box").show();
+
+    // Optionally, update the product name display in the review box
+    $("#review-box .product-name").text(`Review for: ${currentProduct}`);
+});
+
+// Submit review and save to Firebase
+$("#submit-review").on("click", async function () {
+    const reviewText = $("#review-text").val().trim();
+    
+    if (reviewText === "") {
+        alert("Please enter a review.");
+        return;
+    }
+
+    try {
+        await addDoc(collection(db, "reviews"), {
+            product: currentProduct,
+            text: reviewText,
+            timestamp: new Date(),
+        });
+
+        alert("Review submitted!");
+        $("#review-text").val(""); // Clear review input
+        $("#review-box").hide();   // Hide the review box after submission
+    } catch (error) {
+        console.error("Error adding review: ", error);
+    }
+});
+
+// Load reviews from Firebase and display them
+async function loadReviews() {
+    const querySnapshot = await getDocs(collection(db, "reviews"));
+    const reviewsList = $("#reviews-list");
+    reviewsList.empty(); // Clear existing reviews
+
+    querySnapshot.forEach((doc) => {
+        const review = doc.data();
+        reviewsList.append(`
+            <li>
+                <strong>Product: ${review.product}</strong><br>
+                Review: ${review.text}<br>
+                Date: ${new Date(review.timestamp.seconds * 1000).toLocaleString()}
+            </li>
+        `);
+    });
+}
+
+$(document).ready(function () {
+    loadReviews();
+});
