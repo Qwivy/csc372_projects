@@ -72,7 +72,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $("#load-initiatives").on("click", function () {
         let xhr = new XMLHttpRequest();
-        xhr.open("GET", "ajax.xml", true);
+        xhr.open("GET", "/sustainability.xml", true);
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 let xmlDoc = xhr.responseXML;
@@ -96,10 +96,12 @@ $(document).ready(function () {
 $(document).ready(function () {
     $("#load-faq").on("click", function () {
         $.ajax({
-            url: "faq.json",
+            url: "/faq.json",
             type: "GET",
             dataType: "json",
             success: function (data) {
+                console.log("Loaded FAQ data:", data); // Log the data
+        
                 let output = "<ul>";
                 data.faqs.forEach(function (faq) {
                     output += `
@@ -109,10 +111,11 @@ $(document).ready(function () {
                         </li>`;
                 });
                 output += "</ul>";
-
-                $("#faq-container").html(output);
+        
+                $("#faq-container").html(output); // Display the FAQ list
             },
-            error: function () {
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error("Error loading FAQ JSON:", textStatus, errorThrown);
                 alert("Error loading FAQs. Please try again later.");
             }
         });
