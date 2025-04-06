@@ -72,7 +72,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $("#load-initiatives").on("click", function () {
         let xhr = new XMLHttpRequest();
-        xhr.open("GET", "ajax.xml", true);
+        xhr.open("GET", "sustainability.xml", true);
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 let xmlDoc = xhr.responseXML;
