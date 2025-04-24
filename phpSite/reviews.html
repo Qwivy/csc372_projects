@@ -1,4 +1,3 @@
-<?php require __DIR__ . '/includes/db.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,26 +26,10 @@
         </div>
     </div>
 
-    <div id="review-box" style="display: none;">
-        <h3>Leave a Review</h3>
-        <textarea id="review-text" placeholder="Write your review..."></textarea>
-        <button id="submit-review">Submit Review</button>
-    </div>
-    <div class="product-grid">
-        <?php
-        $sql = "SELECT * FROM products";
-        $stmt = pdo($pdo, $sql);
 
-        // Fetch the results
-        while ($row = $stmt->fetch()):
-        ?>
-        <div class="product-card" data-product-name="<?= htmlspecialchars($row['name']) ?>">
-            <img style="width: 50%;" src="<?= htmlspecialchars($row['image']) ?>" alt="<?= htmlspecialchars($row['name']) ?>">
-            <h3><?= htmlspecialchars($row['name']) ?></h3>
-            <div class="price">$<?= htmlspecialchars($row['price']) ?></div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-            <?php endwhile; ?>
+    <div id="reviews-container">
+        <h2>Customer Reviews</h2>
+        <ul id="reviews-list"></ul>
     </div>
 
     <div class="information">

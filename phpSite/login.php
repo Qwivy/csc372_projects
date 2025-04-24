@@ -1,17 +1,39 @@
 <?php
-// Get form data from POST
-$username = $_POST['username'] ?? '';
-$password = $_POST['password'] ?? '';
 
-// Simple validation
-if ($username === 'admin' && $password === 'password') {
-    // Redirect to index.php with a session or URL param
-    session_start();
-    $_SESSION['username'] = $username;
-    header('Location: index.php');
-    exit();
-} else {
-    echo "<h2>Invalid login. Please try again.</h2>";
-    echo "<a href='login.html'>Back to Login</a>";
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
+
+    $validUsername = 'admin';
+    $validPassword = 'password';
+
+    if ($username === $validUsername && $password === $validPassword) {
+        header("Location: admin_panel.php");
+        exit(); 
+    } else {
+        $error = "Invalid username or password.";
+    }
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+    <h2>Login Form</h2>
+
+
+    <form action="login.php" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
